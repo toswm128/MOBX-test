@@ -1,7 +1,13 @@
 import React,{useState} from "react";
+import {useStore} from "../state/context"
+import {observer} from "mobx-react"
 
-function App() {
+export default observer(() =>{
+  const {movieStore} = useStore();
   const [count, countItem] = useState(0)
+
+
+  
   return (
     <div className="App">
       <h1>App.js</h1>
@@ -10,6 +16,7 @@ function App() {
       <button onClick={()=>{countItem(count-1)}}>-</button>
     </div>
   );
-}
 
+  }
+)
 export default App;
